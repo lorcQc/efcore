@@ -77,12 +77,6 @@ namespace Microsoft.EntityFrameworkCore.Internal
                 throw new InvalidOperationException(CoreStrings.RecursiveOnModelCreating);
             }
 
-            if (modelFromOptions != null
-                && modelFromOptions.ModelDependencies != null)
-            {
-                return modelFromOptions;
-            }
-
             try
             {
                 _inOnModelCreating = true;
