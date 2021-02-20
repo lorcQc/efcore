@@ -87,7 +87,7 @@ namespace Microsoft.EntityFrameworkCore.Internal
             {
                 _inOnModelCreating = true;
 
-                var dependencies = _scopedProvider.GetService<IModelCreationDependencies>();
+                var dependencies = _scopedProvider.GetService<ModelCreationDependencies>();
                 return modelFromOptions == null
                     ? dependencies.ModelSource.GetModel(_currentContext.Context, dependencies)
                     : dependencies.ModelRuntimeInitializer.Initialize(modelFromOptions, dependencies.ValidationLogger);

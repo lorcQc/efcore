@@ -54,8 +54,10 @@ namespace Microsoft.EntityFrameworkCore.Infrastructure
             IModel model,
             IDiagnosticsLogger<DbLoggerCategory.Model.Validation>? validationLogger)
         {
-            if (model.SetModelDependencies(Dependencies.ModelDependencies))
+            if (model.ModelDependencies == null)
             {
+                model.ModelDependencies = Dependencies.ModelDependencies;
+
                 InitializeModel(model, preValidation: true);
 
                 if (validationLogger != null

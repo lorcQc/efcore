@@ -55,7 +55,7 @@ namespace Microsoft.EntityFrameworkCore.Infrastructure
         /// </summary>
         [EntityFrameworkInternal]
         public ModelRuntimeInitializerDependencies(
-            [NotNull] SingletonModelDependencies singletonModelDependencies,
+            [NotNull] RuntimeModelDependencies singletonModelDependencies,
             [NotNull] IModelValidator modelValidator)
         {
             Check.NotNull(singletonModelDependencies, nameof(singletonModelDependencies));
@@ -68,7 +68,7 @@ namespace Microsoft.EntityFrameworkCore.Infrastructure
         /// <summary>
         ///     The model runtime dependencies.
         /// </summary>
-        public SingletonModelDependencies ModelDependencies { get; [param: NotNull] init; }
+        public RuntimeModelDependencies ModelDependencies { get; [param: NotNull] init; }
 
         /// <summary>
         ///     The model validator.
